@@ -36,7 +36,7 @@ pipeline {
             agent {
                 docker { 
                     image 'amazon/aws-cli:latest'
-                    args '-u jenkins --entrypoint='
+                    args '-u root --entrypoint='
                 }
             }
             steps {
