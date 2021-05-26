@@ -181,10 +181,8 @@ public class Main {
             {
               java.io.FileDescriptor fd = fileOutputStream.getFD();
               System.out.println(fd.toString());
-            } catch(Exception exception){
+            } catch(Exception exception) {
               System.out.println(exception);
-            } finally {
-              close(fileOutputStream);
             }
 
         }
