@@ -1,9 +1,9 @@
-
 import javax.crypto.Cipher;
 import javax.crypto.NoSuchPaddingException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
@@ -177,16 +177,10 @@ public class Main {
             }
             String decStr = new String(org.apache.commons.codec.binary.Base64.decodeBase64(
                 org.apache.commons.codec.binary.Base64.encodeBase64(fileName.getBytes())));
-            try(java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(decStr))
-            {
-              java.io.FileDescriptor fd = fileOutputStream.getFD();
-              System.out.println(fd.toString());
-            } catch(Exception exception){
-              System.out.println(exception);
-            } finally {
-              close(fileOutputStream);
-            }
-
+            java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(decStr);
+            java.io.FileDescriptor fd = fileOutputStream.getFD();
+            System.out.println(fd.toString());
         }
     }
 }
+
