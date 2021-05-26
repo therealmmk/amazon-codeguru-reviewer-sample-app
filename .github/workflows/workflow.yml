@@ -27,9 +27,9 @@ jobs:
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
-        with: 
-          name: assets-for-download
-          path: downloads  
+      with: 
+        name: assets-for-download
+        path: downloads  
 
     # Extra step requied for private beta
     - name: Checkout the action from a private repository
