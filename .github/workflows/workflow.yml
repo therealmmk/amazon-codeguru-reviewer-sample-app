@@ -20,7 +20,10 @@ jobs:
         java-version: 1.8
 
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: |
+        mkdir downloads
+        mvn -B package --file pom.xml
+        cp /home/runner/work/amazon-codeguru-reviewer-sample-app/amazon-codeguru-reviewer-sample-app/target/*.jar downloads/
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
